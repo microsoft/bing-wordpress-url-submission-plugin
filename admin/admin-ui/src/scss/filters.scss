@@ -1,0 +1,131 @@
+@import "default";
+
+.filters {
+  .filterBlock {
+    margin-bottom: 16px;
+
+    .bwtFilterDropdown {
+      @include displayIB();
+      width: 190px;
+      margin-top: 12px;
+      margin-right: 8px;
+
+      * {
+        border-color: $bwt_filterBorderColor;
+      }
+    }
+    .bwtfilterTitle {
+      @include singleLineEllipsis();
+      .label {
+        color: $bwt_darkGray10Color;
+      }
+    }
+    .bwtFilterButton {
+      @include displayIB();
+      width: 190px;
+      margin-top: 12px;
+
+      * {
+        border-color: $bwt_filterBorderColor;
+      }
+    }
+    .UrlsCountLabel {
+      @include displayIB();
+      margin-top: 20px;
+      margin-right: 16px;
+    }
+  }
+}
+
+.filterLinkButton {
+  cursor: pointer;
+
+  i {
+    color: $bwt_primaryTealColor;
+  }
+
+  > span {
+    @include font-type($bwt_semiboldFontFamily, 14px);
+    display: block;
+    padding: 5px 16px;
+    margin-top: 10px;
+
+    * div {
+      @include font-type($bwt_scopeFontFamily, 14px);
+      color: $bwt_darkGray40Color;
+    }
+
+    &:hover {
+      @include border-radius(2px);
+      background: $bwt_filterButtonsHoverBackGroundColor;
+    }
+  }
+}
+
+.disableButton {
+  cursor: not-allowed;
+  color: $bwt_optionalTextColor;
+}
+
+.tabsInsidePage {
+  .pivotParent {
+    margin-top: 8px;
+    margin-right: 8px;
+
+    button {
+      height: 34px;
+      line-height: 34px;
+      font-size: 14px;
+      min-width: 114px;
+      border-color: $bwt_filterBorderColor;
+      border-width: 1px 0 1px 1px;
+      border-style: solid;
+
+      &:active,
+      &.is-selected {
+        background: $bwt_primaryTealColor;
+        color: $bwt_white;
+        &:hover {
+          background: $bwt_darkTealColor;
+          color: $bwt_white;
+        }
+      }
+      &:hover {
+        color: $bwt_primaryTextColor;
+        background: $bwt_navButtonHoverBackground;
+      }
+
+      &:first-child {
+        border-radius: 4px 0 0 4px;
+      }
+
+      &:last-child {
+        border-radius: 0 4px 4px 0;
+        border-right: $bwt_filterBoxBorder;
+      }
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .filters {
+    .filterBlock {
+      float: none;
+      .bwtFilterDropdown {
+        width: 100%;
+      }
+      .filterLinkButton {
+        float: left;
+        margin-bottom: 16px;
+        span {
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .tabsInsidePage .pivotParent button {
+    min-width: 36px;
+  }
+}

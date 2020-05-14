@@ -1,0 +1,217 @@
+// @import "./default";
+
+// @media (min-width: 639px) {
+//   .mobileOnly {
+//     display: none;
+//   }
+// }
+// //mobiles
+// @media (max-width: 320px) {
+//   .pageLayout {
+//     .mainContainer {
+//       .actionMenu {
+//         padding: 16px;
+//         line-height: 28px;
+//         .selectionCount {
+//           padding: 0;
+//         }
+//         .actionItems {
+//           .overlayButton {
+//             padding: 0;
+//             margin: 0 6px;
+//             &:last-child {
+//               padding: 0;
+//               margin: 0 6px;
+//             }
+//           }
+//         }
+//         .overlayButton:last-child {
+//           padding: 0;
+//           margin: 0;
+//         }
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 639px) {
+//   .desktopOnly {
+//     display: none;
+//   }
+
+//   .pageLayout {
+//     .mainContainer {
+//       .cardWithoutFilterLayout {
+//         margin: 16px 0;
+//       }
+
+//       h2 {
+//         font-weight: 600;
+//         font-size: $bwt_mediumFontSize;
+//         line-height: 32px;
+//       }
+//     }
+
+//     .bw-Header {
+//       .headerLeftElements {
+//         .bingLogoMobile {
+//           padding: 0 8px;
+//         }
+
+//         .bingLogo {
+//           display: none;
+//         }
+//       }
+//     }
+
+//     .headerContent .pivotParent {
+//       margin-top: 10px;
+//     }
+//   }
+//   .actionMenu {
+//     .overlayButton {
+//       margin: 0 4px;
+//       padding: 20px 8px;
+//       &:last-child {
+//         margin: 0;
+//         .bwtIconTxtPair i {
+//           margin-right: 0;
+//         }
+//       }
+//       span {
+//         display: none;
+//       }
+//       .bwtIconTxtPair {
+//         i {
+//           padding-right: 0px;
+//           margin-right: 0px;
+//         }
+//       }
+//     }
+//     .actionItems {
+//       .overlayButton {
+//         &:last-child {
+//           margin: 0 16px 0 0;
+//         }
+//       }
+//     }
+//   }
+//   .ModalContainer {
+//     .modalHeader {
+//       width: 100%;
+//     }
+//   }
+// }
+
+// // ipad
+// @media (min-width: 640px) {
+//   .bw-Header {
+//     .headerLeftElements {
+//       .bingLogoMobile {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 1023px) {
+//   .pageLayout {
+//     .mainContainer {
+//       .containerLayout {
+//         width: calc(100% - 32px);
+//         margin: 16px;
+//       }
+//       .bwtBreadCrumbTitle {
+//         margin-top: 4px;
+//       }
+//     }
+//   }
+//   .actionMenu {
+//     width: calc(100% - 16px);
+//     padding: 0px 16px;
+//     margin: 0 -8px;
+//   }
+// }
+
+// //mobiles & ipad
+// @media (max-width: 1024px) {
+//   .pageLayout {
+//     .mainContainer {
+//       margin-left: 0;
+//       margin-right: 0;
+//       width: 100%;
+
+//       .containerLayout {
+//         max-width: $bwt_pageContentWidth;
+//       }
+//     }
+
+//     .bingHeaderText {
+//       display: none;
+//     }
+
+//     .noDataCard {
+//       width: 100%;
+//     }
+//   }
+// }
+
+// // desktop
+// @media (min-width: 1025px) {
+//   .mainContainer {
+//     width: $bwt_pageContentWidth;
+
+//     .headerContent,
+//     .containerLayout {
+//       width: $bwt_pageContentWidth;
+//     }
+//   }
+
+//   .bw-Header {
+//     .headerLeftElements{
+//       .isMobileButton{
+//         display: none;
+//       }
+//     }
+//   }
+
+//   .noDataCard {
+//     width: 500px;
+//   }
+// }
+
+
+
+
+
+
+@import "./default";
+
+// mobile
+@media (max-width: 782px) {
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .bw-Header {
+    padding: 0 12px;
+
+    .headerLeftElements {
+      padding-left: 16px;
+    }
+
+    .headerRightElements {
+      padding-right: 16px;
+    }
+  }
+
+}
+
+// non-mobile
+@media (min-width: 783px) {
+
+  .mobileOnly {
+    display: none;
+  }
+
+}
