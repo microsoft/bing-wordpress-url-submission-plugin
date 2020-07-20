@@ -25,6 +25,8 @@ Some other handy features included in the plugin:
 * Retry any failed submissions from the recent submissions list.
 * Download recent URL submissions for analysis.
 
+You can browse the code at the [GitHub repository](https://github.com/microsoft/bing-wordpress-url-submission-plugin).
+
 This plugin was developed with love and coffee by the Bing Webmaster team.
 
 
