@@ -1,5 +1,5 @@
 === Bing URL Submissions Plugin ===
-Contributors: bingwebmaster
+Contributors: bingwebmastertools
 Plugin link: https://bing.com/webmasters
 Tags: seo, crawling
 Requires at least: 5.3
@@ -41,7 +41,7 @@ Setting up Bing URL Submissions Plugin consists of two steps - installing the pl
 ### SETTING UP WITH API KEY
 1. Open Bing URL Submissions plugin settings page by clicking on "Settings" link for the plugin. (Or the 'Bing Webmaster' link in the navigation menu).
 1. You should now be greeted with a prompt to enter API key.
-1. Enter your Bing Webmaster API key into the prompt in the plugin page. (You can obtain API key by following the instructions [here](https://docs.microsoft.com/en-us/bingwebmaster/getting-access#using-api-key). Ensure that your WordPress site is verified with Bing Webmaster).
+1. Enter your Bing Webmaster API key into the prompt in the plugin page. (You can obtain API key by following the instructions [here](https://docs.microsoft.com/bingwebmaster/getting-access#using-api-key). Ensure that your WordPress site is verified with Bing Webmaster).
 1. Voila! Your WordPress site is now configured to automatically submit URLs to Bing.
 
 
