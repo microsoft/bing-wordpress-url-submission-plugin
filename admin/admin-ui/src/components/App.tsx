@@ -1,5 +1,4 @@
-import "..//scss/_common.scss";
-import "../scss/pageLayout.scss";
+import "../scss/_common.scss";
 import "../scss/responsiveLayout.scss";
 import "../scss/App.scss";
 
