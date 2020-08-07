@@ -75,6 +75,10 @@ You can go to 'Plugins' page from your WordPress side menu and click on `Deactiv
 
 - Rename root element of settings page to avoid conflicts with other plugins.
 
+### 1.0.3
+
+- Update root element name. Fixes issue loading plugin settings page.
+
 [bing-webmaster]: https://bing.com/webmasters
 [verify-wordpress]: https://docs.microsoft.com/bingwebmaster/verifying-wordpress
 [api-key-access]: https://docs.microsoft.com/bingwebmaster/getting-access#using-api-key
