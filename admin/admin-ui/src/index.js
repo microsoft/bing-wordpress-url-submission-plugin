@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById("bw-Root")
+  document.getElementById("bwAppRoot")
 );
 
 // If you want your app to work offline and load faster, you can change
