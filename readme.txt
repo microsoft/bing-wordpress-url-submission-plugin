@@ -74,14 +74,14 @@ You can go to 'Plugins' page from your WordPress sidebar and click on Deactivate
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial release.
-
-= 1.0.1 =
-* Update readme to reflect support for WordPress v5.5.
+= 1.0.3 =
+* Update root element name. Fixes issue loading plugin settings page.
 
 = 1.0.2 =
 * Rename root element of settings page to avoid conflicts with other plugins.
 
-= 1.0.3 =
-* Update root element name. Fixes issue loading plugin settings page.
+= 1.0.1 =
+* Update readme to reflect support for WordPress v5.5.
+
+= 1.0.0 =
+* Initial release.
