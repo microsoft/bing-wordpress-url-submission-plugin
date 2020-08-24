@@ -63,6 +63,10 @@ You can go to 'Plugins' page from your WordPress side menu and click on `Deactiv
 
 ## Changelog
 
+### 1.0.4
+
+- Fix encoded URLs being displayed in URL Submissions table.
+
 ### 1.0.3
 
 - Update root element name. Fixes issue loading plugin settings page.
