@@ -140,7 +140,7 @@ export const Dashboard: React.FunctionComponent<IDashboardProps> = (props) => {
       onRender: (item: UrlSubmission): JSX.Element => {
         return (
           <a href={item.url} target="_blank">
-            {item.url}
+            {decodeURI(item.url)}
           </a>
         );
       },
