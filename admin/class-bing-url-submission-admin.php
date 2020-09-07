@@ -29,6 +29,10 @@ class Bing_Webmaster_Admin {
 
 	private $prefix = "bwt-";
 
+	private $ignored_post_types = array(
+		"wphb_minify_group"
+	);
+
 	private $routes;
 
 	/**
@@ -166,6 +170,17 @@ class Bing_Webmaster_Admin {
 				// remove __trashed from page url
 				if (strpos($link, "__trashed") > 0) {
 					$link = substr($link, 0, strlen($link) - 10) . "/";
+				}
+
+				// Do not process URLs containing ignored post_type query strings
+				$link_parsed = parse_url($link);
+				if (array_key_exists("query", $link_parsed)) {
+					parse_str($link_parsed["query"], $link_query_strings);
+					if (array_key_exists("post_type", $link_query_strings)) {
+						if (in_array(strtolower($link_query_strings["post_type"]), $this->ignored_post_types)) {
+							return;
+						}
+					}
 				}
 
 				$siteUrl = get_site_url();
