@@ -63,6 +63,10 @@ You can go to 'Plugins' page from your WordPress side menu and click on `Deactiv
 
 ## Changelog
 
+### 1.0.5
+
+- Filter out URLs containing specific post_types that aren't browsable.
+
 ### 1.0.4
 
 - Fix encoded URLs being displayed in URL Submissions table.
