@@ -17,3 +17,6 @@ yarn-error.log*
 
 # Build
 build/
+
+# Publish
+publish/

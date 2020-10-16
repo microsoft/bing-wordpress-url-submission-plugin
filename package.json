@@ -17,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "rimraf build publish",
+    "zip": "mkdir publish && cd build/ && rimraf index.html && bestzip ../publish/plugin.zip *"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "bestzip": "^2.1.7",
+    "rimraf": "^3.0.2"
   }
 }
