@@ -1,16 +1,17 @@
 {
   "dependencies": {
-    "@fluentui/react": "^7.138.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@uifabric/react-hooks": "^7.13.4",
+    "@fluentui/react": "^7.146.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.8",
+    "@types/react": "^16.9.52",
+    "@uifabric/react-hooks": "^7.13.6",
     "date-fns": "^2.16.1",
     "node-sass": "^4.13.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-scripts": "^3.4.3",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
