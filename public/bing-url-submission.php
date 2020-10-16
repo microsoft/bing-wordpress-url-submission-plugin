@@ -9,7 +9,7 @@
  * Plugin Name:       Bing Webmaster Url Submission
  * Plugin URI:        https://www.bing.com/webmaster
  * Description:       A small plugin to allow Url submissions to Bing Webmaster Tools.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Author:            Bing Webmaster
  * Author URI:        https://www.bing.com/webmaster
  * License:           GPL-2.0+
@@ -26,7 +26,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'BWT_URL_SUBMISSION_PLUGIN_VERSION', '1.0.6' );
+define( 'BWT_URL_SUBMISSION_PLUGIN_VERSION', '1.0.7' );
 
 /**
  * Plugin name.
