@@ -59,10 +59,10 @@ class Bing_Webmaster_Admin {
 	 */
 	public function enqueue_styles() {
 
-		$CSSfiles = scandir(dirname(__FILE__) . '/admin-ui/build/static/css/');
+		$CSSfiles = scandir(dirname(__FILE__) . '/../static/css/');
        	foreach($CSSfiles as $filename) {
 			if(strpos($filename,'.css')&&strpos($filename,'.css')+4 === strlen($filename)) {
-				wp_enqueue_style( $filename, plugin_dir_url( __FILE__ ) . 'admin-ui/build/static/css/' . $filename, array(), mt_rand(10,1000), 'all' );
+				wp_enqueue_style( $filename, plugin_dir_url( __FILE__ ) . '../static/css/' . $filename, array(), mt_rand(10,1000), 'all' );
 			}
 		}
 	}
@@ -76,11 +76,11 @@ class Bing_Webmaster_Admin {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/bing-url-submission-admin.js', array( 'jquery' ), $this->version, false );
 
-		$JSfiles = scandir(dirname(__FILE__) . '/admin-ui/build/static/js/');
+		$JSfiles = scandir(dirname(__FILE__) . '/../static/js/');
        	$react_js_to_load = '';
        	foreach($JSfiles as $filename) {
        		if(strpos($filename,'.js')&&strpos($filename,'.js')+3 === strlen($filename)) {
-				   $react_js_to_load = plugin_dir_url( __FILE__ ) . 'admin-ui/build/static/js/' . $filename;
+				   $react_js_to_load = plugin_dir_url( __FILE__ ) . '../static/js/' . $filename;
 				   wp_enqueue_script($filename, $react_js_to_load, '', mt_rand(10,1000), true);
        		}
 		}
