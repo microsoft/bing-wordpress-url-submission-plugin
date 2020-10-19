@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean": "rimraf build publish",
-    "zip": "mkdir publish && cd build/ && rimraf index.html && bestzip ../publish/plugin.zip *"
+    "zip": "mkdir publish && cd build/ && cp ../*.md ../LICENSE.txt . && rimraf index.html && bestzip ../publish/plugin.zip *"
   },
   "eslintConfig": {
     "extends": "react-app"
