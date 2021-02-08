@@ -6,6 +6,7 @@
     "@testing-library/user-event": "^12.1.8",
     "@types/react": "^17.0.1",
     "@uifabric/react-hooks": "^7.13.6",
+    "copyfiles": "^2.4.1",
     "date-fns": "^2.16.1",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
@@ -19,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean": "rimraf build publish",
-    "zip": "mkdir publish && cd build/ && cp ../*.md ../LICENSE.txt . && rimraf index.html && bestzip ../publish/plugin.zip *"
+    "zip": "mkdir publish && cd build/ && copyfiles \"../*.md\" ../LICENSE.txt . && rimraf index.html && bestzip ../publish/plugin.zip *"
   },
   "eslintConfig": {
     "extends": "react-app"
