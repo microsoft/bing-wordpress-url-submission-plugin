@@ -3,8 +3,8 @@ Contributors: bingwebmastertools
 Plugin link: https://bing.com/webmasters
 Tags: seo, crawling
 Requires at least: 5.3
-Tested up to: 5.5
-Stable tag: 1.0.7
+Tested up to: 5.6.1
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 Requires PHP: 5.6.20
@@ -73,6 +73,9 @@ You can go to 'Plugins' page from your WordPress sidebar and click on Deactivate
 
 
 == Changelog ==
+
+= 1.0.8 =
+- Upgrade dependencies to fix vulnerabilities and update latest compatiable wordpress version.
 
 = 1.0.7 =
 - Fix console error being thrown by React when not in plugin page.

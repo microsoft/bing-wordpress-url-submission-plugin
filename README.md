@@ -63,6 +63,10 @@ You can go to 'Plugins' page from your WordPress side menu and click on `Deactiv
 
 ## Changelog
 
+### 1.0.8
+
+- Upgrade dependencies to fix vulnerabilities and update latest compatiable wordpress version.
+
 ### 1.0.7
 
 - Fix console error being thrown by React when not in plugin page.
