@@ -63,6 +63,10 @@ You can go to 'Plugins' page from your WordPress side menu and click on `Deactiv
 
 ## Changelog
 
+### 1.0.10
+
+- Upgrade dependencies to fix vulnerabilities.
+
 ### 1.0.9
 
 - Update readme to reflect support for WordPress v5.7.
