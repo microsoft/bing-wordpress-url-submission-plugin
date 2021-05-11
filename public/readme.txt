@@ -76,7 +76,7 @@ You can go to 'Plugins' page from your WordPress sidebar and click on Deactivate
 
 = 1.0.11 =
 - Fix: Non public URL subimssions.
-- Fix: Fatal PHP error handling and security fixes.
+- Fix: Upgrade dependencies to fix vulnerabilities.
 
 = 1.0.10 =
 - Upgrade dependencies to fix vulnerabilities.
