@@ -63,6 +63,11 @@ You can go to 'Plugins' page from your WordPress side menu and click on `Deactiv
 
 ## Changelog
 
+### 1.0.11
+
+- Fix: Non public URL subimssions.
+- Fix: Fatal PHP error handling and security fixes.
+
 ### 1.0.10
 
 - Upgrade dependencies to fix vulnerabilities.
@@ -73,7 +78,7 @@ You can go to 'Plugins' page from your WordPress side menu and click on `Deactiv
 
 ### 1.0.8
 
-- Upgrade dependencies to fix vulnerabilities and update latest compatiable wordpress version.
+- Upgrade dependencies to fix vulnerabilities and update latest compatible wordpress version.
 
 ### 1.0.7
 

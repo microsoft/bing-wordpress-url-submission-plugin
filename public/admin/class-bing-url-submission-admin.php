@@ -29,9 +29,9 @@ class Bing_Webmaster_Admin {
 
 	private $prefix = "bwt-";
 
-	private $ignored_post_types = array(
-		"wphb_minify_group"
-	);
+	// private $ignored_post_types = array(
+	// 	"wphb_minify_group"
+	// );
 
 	private $routes;
 
@@ -171,20 +171,18 @@ class Bing_Webmaster_Admin {
 				if (strpos($link, "__trashed") > 0) {
 					$link = substr($link, 0, strlen($link) - 10) . "/";
 				}
-
-				// Do not process URLs containing ignored post_type query strings
-				$link_parsed = parse_url($link);
-				if (array_key_exists("query", $link_parsed)) {
-					parse_str($link_parsed["query"], $link_query_strings);
-					if (array_key_exists("post_type", $link_query_strings)) {
-						if (in_array(strtolower($link_query_strings["post_type"]), $this->ignored_post_types)) {
-							return;
-						}
-					}
+				
+				error_log(__METHOD__ . " link ". $link);
+				$is_public_post = is_post_publicly_viewable($post);
+				error_log(__METHOD__ . " is_public_post". (int)$is_public_post);
+				
+				 //checking for non-public urls
+				 if(!$is_public_post &&  $type != 'delete'){
+					error_log(__METHOD__ . " post not public");
+					return;
 				}
 
-				$siteUrl = get_site_url();
-
+				$siteUrl = get_home_url();
 				// check if same url was submitted recently(within a minute)
 				if ($new_status != 'trash' && Bing_Webmaster_Admin_Utils::url_submitted_within_last_minute(Bing_Webmaster_Admin_Routes::$passed_submissions_table, $link)) {
 					return;

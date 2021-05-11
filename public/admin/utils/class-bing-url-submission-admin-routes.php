@@ -193,7 +193,8 @@ class Bing_Webmaster_Admin_Routes {
 		$response = wp_remote_get( "https://www.bing.com/webmaster/api.svc/json/GetUrlSubmissionQuota?apikey=" . $api_key . "&siteUrl=" . $siteUrl . "&client=wp_v_" . $this->version );
 
 		if (is_wp_error( $response )) {
-			throw "error:WP_Error:".implode("||", $response->get_error_messages());
+			error_log(__METHOD__ . " error:WP_Error: at ".__LINE__) ;
+			return -1;
 		}
 		if (isset($response['errors'])) {
 			return -1;
@@ -216,7 +217,8 @@ class Bing_Webmaster_Admin_Routes {
 		$response = wp_remote_get( "https://www.bing.com/webmaster/api.svc/json/CheckSiteVerification?apikey=" . $api_key . "&client=wp_v_" . $this->version . "&siteUrl=" . $siteUrl);
 
 		if (is_wp_error( $response )) {
-			throw "error:WP_Error:".implode("||", $response->get_error_messages());
+			error_log(__METHOD__ . " error:WP_Error: at ".__LINE__) ;
+			return "error:RequestFailed";
 		}
 		if (isset($response['errors'])) {
 			return "error:RequestFailed";
@@ -300,7 +302,8 @@ class Bing_Webmaster_Admin_Routes {
 			'headers' => array( 'Content-Type' => 'application/json') ) );
 
 		if (is_wp_error( $response )) {
-			throw "error:WP_Error:".implode("||", $response->get_error_messages());
+			error_log(__METHOD__ . " error:WP_Error: at ".__LINE__) ;
+			return "error:RequestFailed";
 		}
 		if (isset($response['errors'])) {
 			return "error:RequestFailed";
