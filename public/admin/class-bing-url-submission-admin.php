@@ -29,10 +29,6 @@ class Bing_Webmaster_Admin {
 
 	private $prefix = "bwt-";
 
-	// private $ignored_post_types = array(
-	// 	"wphb_minify_group"
-	// );
-
 	private $routes;
 
 	/**
