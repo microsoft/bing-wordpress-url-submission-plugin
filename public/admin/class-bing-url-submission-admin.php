@@ -168,13 +168,14 @@ class Bing_Webmaster_Admin {
 					$link = substr($link, 0, strlen($link) - 10) . "/";
 				}
 				
-				error_log(__METHOD__ . " link ". $link);
 				$is_public_post = is_post_publicly_viewable($post);
-				error_log(__METHOD__ . " is_public_post". (int)$is_public_post);
+				if ( true === WP_DEBUG && true === WP_DEBUG_LOG) {
+					error_log(__METHOD__ . " is_public_post". (int)$is_public_post);
+				    error_log(__METHOD__ . " link ". $link);
+				}
 				
 				 //checking for non-public urls
-				 if(!$is_public_post &&  $type != 'delete'){
-					error_log(__METHOD__ . " post not public");
+				 if(!$is_public_post &&  $type != 'delete'){	
 					return;
 				}
 
