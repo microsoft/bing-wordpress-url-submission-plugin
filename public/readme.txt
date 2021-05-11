@@ -4,7 +4,7 @@ Plugin link: https://bing.com/webmasters
 Tags: seo, crawling
 Requires at least: 5.3
 Tested up to: 5.7
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 Requires PHP: 5.6.20
@@ -73,6 +73,10 @@ You can go to 'Plugins' page from your WordPress sidebar and click on Deactivate
 
 
 == Changelog ==
+
+= 1.0.11 =
+- Fix: Non public URL subimssions.
+- Fix: Fatal PHP error handling and security fixes.
 
 = 1.0.10 =
 - Upgrade dependencies to fix vulnerabilities.

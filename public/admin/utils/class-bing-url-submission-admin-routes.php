@@ -193,7 +193,10 @@ class Bing_Webmaster_Admin_Routes {
 		$response = wp_remote_get( "https://www.bing.com/webmaster/api.svc/json/GetUrlSubmissionQuota?apikey=" . $api_key . "&siteUrl=" . $siteUrl . "&client=wp_v_" . $this->version );
 
 		if (is_wp_error( $response )) {
-			throw "error:WP_Error:".implode("||", $response->get_error_messages());
+			if ( true === WP_DEBUG && true === WP_DEBUG_LOG) {
+				error_log(__METHOD__ . " error:WP_Error: ".$response->get_error_message()) ;
+			}
+			return -1;
 		}
 		if (isset($response['errors'])) {
 			return -1;
@@ -211,12 +214,15 @@ class Bing_Webmaster_Admin_Routes {
 	}
 
 	private function check_bwt_api_key( $api_key ) {
-		$siteUrl = get_site_url();
+		$siteUrl = get_home_url();
 		$data = "{\n\t\"siteUrl\":\"".$siteUrl."\"}";
 		$response = wp_remote_get( "https://www.bing.com/webmaster/api.svc/json/CheckSiteVerification?apikey=" . $api_key . "&client=wp_v_" . $this->version . "&siteUrl=" . $siteUrl);
 
 		if (is_wp_error( $response )) {
-			throw "error:WP_Error:".implode("||", $response->get_error_messages());
+			if ( true === WP_DEBUG && true === WP_DEBUG_LOG) {
+			    error_log(__METHOD__ . " error:WP_Error: ".$response->get_error_message()) ;
+			}
+			return "error:WP_Error";
 		}
 		if (isset($response['errors'])) {
 			return "error:RequestFailed";
@@ -300,7 +306,10 @@ class Bing_Webmaster_Admin_Routes {
 			'headers' => array( 'Content-Type' => 'application/json') ) );
 
 		if (is_wp_error( $response )) {
-			throw "error:WP_Error:".implode("||", $response->get_error_messages());
+			if ( true === WP_DEBUG && true === WP_DEBUG_LOG) {
+			    error_log(__METHOD__ . " error:WP_Error: ".$response->get_error_message()) ;
+			}
+			return "error:WP_Error";
 		}
 		if (isset($response['errors'])) {
 			return "error:RequestFailed";
@@ -496,7 +505,7 @@ class Bing_Webmaster_Admin_Routes {
 			update_option( $this->prefix . 'auto_submission_enabled', "1" );
 			$auto_submission_enabled = "1";
 		}
-		$siteUrl = get_site_url();
+		$siteUrl = get_home_url();
 		return new \WP_REST_Response( array(
 			'AutoSubmissionEnabled' => $auto_submission_enabled === "1",
 			'SiteUrl' => $siteUrl,
@@ -536,7 +545,7 @@ class Bing_Webmaster_Admin_Routes {
 				} else {
 					if ($is_valid_api_key && $is_valid_api_key === "1") {
 						$parsedUrl = parse_url($url);
-						$siteUrl = get_site_url();
+						$siteUrl = get_home_url();
 						$output = $this->submit_url_to_bwt($siteUrl, $url, $api_key, "add", true);
 						return $this->update_submission_output($output, $url);
 					}
@@ -570,7 +579,7 @@ class Bing_Webmaster_Admin_Routes {
 		update_option( $this->prefix . 'passed_count', $passed_count );
 		$quota = -1;
 		if ($is_valid_api_key && $is_valid_api_key === "1") {
-			$siteUrl = get_site_url();
+			$siteUrl = get_home_url();
 			$quota = $this->get_site_quota(base64_decode($admin_api_key), $siteUrl);
 		}
 		return new \WP_REST_Response( array(
@@ -602,7 +611,7 @@ class Bing_Webmaster_Admin_Routes {
 			$json = json_decode($body);
 			if (isset($json->Submissions) && count($json->Submissions) > 0) {
 				$responses = array();
-				$siteUrl = get_site_url();
+				$siteUrl = get_home_url();
 
 				$submissions = $json->Submissions;
 				$has_error = false;
