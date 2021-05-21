@@ -63,6 +63,9 @@ You can go to 'Plugins' page from your WordPress side menu and click on `Deactiv
 
 ## Changelog
 
+### 1.0.12
+- Fix: Compatibility issue with older wordpress versions.
+
 ### 1.0.11
 
 - Fix: Non public URL subimssions.

@@ -56,7 +56,7 @@ class Bing_Webmaster_Admin {
 	public function enqueue_styles() {
 
 		$CSSfiles = scandir(dirname(__FILE__) . '/../static/css/');
-       	foreach($CSSfiles as $filename) {
+		   foreach($CSSfiles as $filename) {
 			if(strpos($filename,'.css')&&strpos($filename,'.css')+4 === strlen($filename)) {
 				wp_enqueue_style( $filename, plugin_dir_url( __FILE__ ) . '../static/css/' . $filename, array(), mt_rand(10,1000), 'all' );
 			}
@@ -73,12 +73,12 @@ class Bing_Webmaster_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/bing-url-submission-admin.js', array( 'jquery' ), $this->version, false );
 
 		$JSfiles = scandir(dirname(__FILE__) . '/../static/js/');
-       	$react_js_to_load = '';
-       	foreach($JSfiles as $filename) {
-       		if(strpos($filename,'.js')&&strpos($filename,'.js')+3 === strlen($filename)) {
+		   $react_js_to_load = '';
+		   foreach($JSfiles as $filename) {
+			   if(strpos($filename,'.js')&&strpos($filename,'.js')+3 === strlen($filename)) {
 				   $react_js_to_load = plugin_dir_url( __FILE__ ) . '../static/js/' . $filename;
 				   wp_enqueue_script($filename, $react_js_to_load, '', mt_rand(10,1000), true);
-       		}
+			   }
 		}
 
 		wp_localize_script( $this->plugin_name, 'wpr_object', array(
@@ -133,7 +133,7 @@ class Bing_Webmaster_Admin {
 	{
 		/*
 		*  Documentation : https://codex.wordpress.org/Plugin_API/Filter_Reference/plugin_action_links_(plugin_file_name)
-		    */
+			*/
 		$settings_link = array(
 			'<a href="' . admin_url('admin.php?page=' . $this->plugin_name) . '">' . __('Settings', $this->plugin_name) . '</a>',
 		);
@@ -167,16 +167,31 @@ class Bing_Webmaster_Admin {
 				if (strpos($link, "__trashed") > 0) {
 					$link = substr($link, 0, strlen($link) - 10) . "/";
 				}
-				
-				$is_public_post = is_post_publicly_viewable($post);
-				if ( true === WP_DEBUG && true === WP_DEBUG_LOG) {
-					error_log(__METHOD__ . " is_public_post". (int)$is_public_post);
-				    error_log(__METHOD__ . " link ". $link);
+				if(empty($link)){
+					if ( true === WP_DEBUG && true === WP_DEBUG_LOG) error_log(__METHOD__ . " link is empty");
+					return;
 				}
 				
-				 //checking for non-public urls
-				 if(!$is_public_post &&  $type != 'delete'){	
-					return;
+				if(function_exists('is_post_publicly_viewable')){
+					$is_public_post = is_post_publicly_viewable($post);
+
+					if ( true === WP_DEBUG && true === WP_DEBUG_LOG) {
+						error_log(__METHOD__ . " is_public_post". (int)$is_public_post);
+						error_log(__METHOD__ . " link ". $link);
+					}
+
+					if(!$is_public_post &&  $type != 'delete'){	
+						return;
+					}
+				}else{
+					$http_response_header = wp_safe_remote_head($link);
+					$res_code = wp_remote_retrieve_response_code($http_response_header);
+					
+					if (true === WP_DEBUG && true === WP_DEBUG_LOG) error_log(__METHOD__ . " link ". $link." ".$res_code);
+					
+					if(empty($res_code) || ($res_code != 200 &&  $type != 'delete')){	
+						return;
+					}
 				}
 
 				$siteUrl = get_home_url();
@@ -200,4 +215,5 @@ class Bing_Webmaster_Admin {
 	{
 		return $input;
 	}
+
 }
