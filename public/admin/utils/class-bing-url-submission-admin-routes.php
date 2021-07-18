@@ -544,7 +544,7 @@ class Bing_Webmaster_Admin_Routes {
 						), 200 );
 				} else {
 					if ($is_valid_api_key && $is_valid_api_key === "1") {
-						$parsedUrl = parse_url($url);
+						$parsedUrl = wp_parse_url($url);
 						$siteUrl = get_home_url();
 						$output = $this->submit_url_to_bwt($siteUrl, $url, $api_key, "add", true);
 						return $this->update_submission_output($output, $url);

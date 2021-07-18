@@ -19,20 +19,23 @@ class Bing_Webmaster_Deactivator {
 	 *
 	 * @since    0.01.01
 	 */
-	public static function deactivate($plugin_name) {
-		delete_option("bwt-failed_count");
-		delete_option("bwt-passed_count");
-		delete_option("bwt-is_valid_api_key");
-		delete_option("bwt-admin_api_key");
-		delete_option("bwt-auto_submission_enabled");
+	public static function deactivate( $plugin_name ) {
+		delete_option( 'bwt-failed_count' );
+		delete_option( 'bwt-passed_count' );
+		delete_option( 'bwt-is_valid_api_key' );
+		delete_option( 'bwt-admin_api_key' );
+		delete_option( 'bwt-auto_submission_enabled' );
 
 		global $wpdb;
-	
-		$table_name = $wpdb->prefix . 'bwt_failed_submissions';
-		$wpdb->query("DROP TABLE {$table_name}");
 
+		$table_name = $wpdb->prefix . 'bwt_failed_submissions';
+		//phpcs:disable 
+		$wpdb->query( 'DROP TABLE  ' . $table_name );
+		//phpcs:enable 
 		$table_name = $wpdb->prefix . 'bwt_passed_submissions';
-		$wpdb->query("DROP TABLE {$table_name}");
+		//phpcs:disable
+		$wpdb->query( 'DROP TABLE  ' . $table_name );
+		//phpcs:enable 
 	}
 
 }

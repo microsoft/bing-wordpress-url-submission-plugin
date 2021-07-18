@@ -30,7 +30,7 @@ class Bing_Webmaster_Admin {
 	private $prefix = "bwt-";
 
 	private $routes;
-
+	
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -161,7 +161,7 @@ class Bing_Webmaster_Admin {
 			$type = "delete";
 		}
 		if ($is_change) {
-			if (isset($is_valid_api_key) && $is_valid_api_key && $auto_submission_enabled && $auto_submission_enabled == "1") {
+			if (isset($is_valid_api_key) && $is_valid_api_key && $auto_submission_enabled && $auto_submission_enabled === "1") {
 				$link = get_permalink($post);
 				// remove __trashed from page url
 				if (strpos($link, "__trashed") > 0) {
@@ -195,6 +195,7 @@ class Bing_Webmaster_Admin {
 				}
 
 				$siteUrl = get_home_url();
+
 				// check if same url was submitted recently(within a minute)
 				if ($new_status != 'trash' && Bing_Webmaster_Admin_Utils::url_submitted_within_last_minute(Bing_Webmaster_Admin_Routes::$passed_submissions_table, $link)) {
 					return;
