@@ -63,6 +63,9 @@ You can go to 'Plugins' page from your WordPress side menu and click on `Deactiv
 
 ## Changelog
 
+### 1.0.13
+- Fix: Compatibility update with wordpress v5.8 and linting fixes.
+
 ### 1.0.12
 - Fix: Compatibility issue with older wordpress versions.
 

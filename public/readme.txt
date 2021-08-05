@@ -3,8 +3,8 @@ Contributors: bingwebmastertools
 Plugin link: https://bing.com/webmasters
 Tags: seo, crawling
 Requires at least: 5.3
-Tested up to: 5.7
-Stable tag: 1.0.12
+Tested up to: 5.8
+Stable tag: 1.0.13
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 Requires PHP: 5.6.20
@@ -73,6 +73,9 @@ You can go to 'Plugins' page from your WordPress sidebar and click on Deactivate
 
 
 == Changelog ==
+
+= 1.0.13 =
+- Fix: Compatibility update with wordpress v5.8 and linting fixes.
 
 = 1.0.12 =
 - Fix: Compatibility issue with older wordpress versions.
